@@ -15,9 +15,9 @@
  background-image: url('https://avatars1.githubusercontent.com/u/5793153?s=460&v=4');
  background-size: cover;
  display: block;
- border-radius: 25px;
- -webkit-border-radius: 25px;
- -moz-border-radius: 25px;
+ border-radius: 15px;
+ -webkit-border-radius: 15px;
+ -moz-border-radius: 15px;
 }
 
 .img-rounded-small{
@@ -25,8 +25,8 @@
  height: 50px;
  background-image: url('https://avatars1.githubusercontent.com/u/5793153?s=460&v=4');
  background-size: cover;
- display: block;
- border-radius: 25px;
- -webkit-border-radius: 25px;
- -moz-border-radius: 25px;
+ display: inline-block;
+ border-radius: 5px;
+ -webkit-border-radius: 5px;
+ -moz-border-radius: 5px;
 }

@@ -4,7 +4,7 @@ title: About Me
 permalink: /about/
 ---
 
-I'm a University Assistent at Graz University of Technology at the Institute of Structural Durability and Railway Technology in the area of mechanical engineering.
+My Name is Andreas Dutzler and I'm a University Assistent at Graz University of Technology at the Institute of Structural Durability and Railway Technology in the area of mechanical engineering.
 
 ### Research Information
 
@@ -13,3 +13,5 @@ In the area of computational engineering my research is focused on the mechanica
 ### Contact me
 
 [TUGrazonline](https://online.tugraz.at/tug_online/visitenkarte.show_vcard?pPersonenId=70D23DDEAC33605C&pPersonenGruppe=3)
+
+[Researchgate](https://www.researchgate.net/profile/Andreas_Dutzler)

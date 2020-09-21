@@ -1,4 +1,138 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="https://adtzlr.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://adtzlr.github.io/blog/" rel="alternate" type="text/html" /><updated>2020-09-21T14:09:35-05:00</updated><id>https://adtzlr.github.io/blog/feed.xml</id><title type="html">adtzlr</title><subtitle>Andreas Dutzler</subtitle><entry><title type="html">How to install a Fortran Compiler for MSC.Marc</title><link href="https://adtzlr.github.io/blog/markdown/2018/02/06/FortranMarc.html" rel="alternate" type="text/html" title="How to install a Fortran Compiler for MSC.Marc" /><published>2018-02-06T00:00:00-06:00</published><updated>2018-02-06T00:00:00-06:00</updated><id>https://adtzlr.github.io/blog/markdown/2018/02/06/FortranMarc</id><content type="html" xml:base="https://adtzlr.github.io/blog/markdown/2018/02/06/FortranMarc.html">&lt;h1 id=&quot;how-to-install-a-fortran-compiler-for-mscmarc&quot;&gt;How to install a Fortran Compiler for MSC.Marc&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="https://adtzlr.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://adtzlr.github.io/blog/" rel="alternate" type="text/html" /><updated>2020-09-21T14:15:56-05:00</updated><id>https://adtzlr.github.io/blog/feed.xml</id><title type="html">adtzlr</title><subtitle>Andreas Dutzler</subtitle><entry><title type="html">Geometrisch exakte eindimensionale (1d) Finite-Elemente-Methode</title><link href="https://adtzlr.github.io/blog/markdown/2020/09/21/StabNichtlinearA.html" rel="alternate" type="text/html" title="Geometrisch exakte eindimensionale (1d) Finite-Elemente-Methode" /><published>2020-09-21T00:00:00-05:00</published><updated>2020-09-21T00:00:00-05:00</updated><id>https://adtzlr.github.io/blog/markdown/2020/09/21/StabNichtlinearA</id><content type="html" xml:base="https://adtzlr.github.io/blog/markdown/2020/09/21/StabNichtlinearA.html">&lt;h1 id=&quot;einleitung&quot;&gt;Einleitung&lt;/h1&gt;
+
+&lt;p&gt;In dieser Beitragsserie werden wir die Grundlagen der geometrisch exakten eindimensionalen Finite-Elemente-Methode mit beliebiger Materialnichtlinearität zur Berechnung statischer, strukturmechanischer Aufgabenstellungen erarbeiten. Manche Dinge sind nicht direkt auf ein Stabelement im dreidimensionalen Raum übertragbar, darauf wird im Beitrag an den nötigen Stellen immer wieder eingegangen. Und die Beitragsreihe soll vor allem eines zeigen: Erklärt man die Dinge der Reihe nach, dann ist die Thematik ohne großes Vorwissen für Interessierte recht einfach verständlich.&lt;/p&gt;
+
+&lt;h2 id=&quot;kinematik-eines-stabelements&quot;&gt;Kinematik eines Stabelements&lt;/h2&gt;
+
+&lt;p&gt;In der undeformierten Konfiguration eines Festkörpers - also eines Stabes - werden die Anfangs- und Endpunktkoordinaten ein differentiellen Stabelements  mit $X_A=X$ sowie $X_E=X+dX$ identifiziert.&lt;/p&gt;
+
+&lt;p&gt;Die Deformation wird durch eine eins-zu-eins Abbildung der Punktkoordinaten der undeformierten Konfiguration in die deformierte Konfiguration beschrieben.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;Punktidentifikation.png&quot; alt=&quot;Punktidentifikation&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;$x = \chi(X)$&lt;/p&gt;
+
+&lt;p&gt;Dies führt auf die Anfangs- und Endpunktkoordinaten der deformierten Konfiguration $x_A=x$ sowie $x_E=x+dx$.&lt;/p&gt;
+
+&lt;p&gt;Der eindimensionale Deformationsgradient mit Bezug auf die unverformte Konfiguration beinhaltet die differentielle Längenänderung in einem Bereich rund um einen in der undeformierten Konfiguration identifizierten Punkt $X$.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;Linienidentifikation.png&quot; alt=&quot;Linienidentifikation&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;$F=\frac{d\chi(X)}{dX} = \frac{dx}{dX}$&lt;/p&gt;
+
+&lt;p&gt;$dx = F dX$&lt;/p&gt;
+
+&lt;p&gt;Das deformierte Positionsfeld wird durch Addition eines Verschiebungsfeldes zum undeformierten Positionsfeld bestimmt. Daraus ergibt sich der Zusammenhang, dass der Deformationsgradient gleich dem Verschiebungsgradient plus eins ist.&lt;/p&gt;
+
+&lt;p&gt;$F=\frac{d(X+U)}{dX}=1+\frac{dU}{dX}$&lt;/p&gt;
+
+&lt;p&gt;Das Verhältnis aus deformierter zu undeformierter Länge des differentiellen Stabelements bezeichnen wir als Streckung $\lambda$, unabhängig davon ob eine Längenzu- oder abnahme vorliegt. Mit anderen Worten: Wir sparen uns also den Begriff der &lt;em&gt;Stauchung&lt;/em&gt; und bringen diese in einer Art generalisierter Streckung unter.&lt;/p&gt;
+
+&lt;p&gt;$\lambda=\frac{dx}{dX}=\frac{dl}{dL}$&lt;/p&gt;
+
+&lt;p&gt;Damit ist die Deformation eines differentiellen Stabelements eindeutig charakterisiert.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Hinweis&lt;/strong&gt;: Die direkte Berechnung der Streckung entlang eines im Raum liegenden Stabes ist auf diese Art nicht möglich! Hier muss über das Skalarprodukt $dl^2 = d\boldsymbol{x}^T d\boldsymbol{x}$ die quadratische Streckung berechnet werden (Satz von Pythagoras). Danach wird durch Ziehen der Wurzel die Stabstreckung ermittelt. Die Wurzel darf man aber nur &lt;em&gt;entlang des Stabes&lt;/em&gt; ziehen, wenn man das so sagen will. Die Skalarprodukte der Stabvektoren sind die einzige Möglichkeit, um im Raum überhaupt eine Längenmessung etablieren zu können. Dafür ist auch kein Wurzelziehen nötig.&lt;/p&gt;
+
+&lt;h2 id=&quot;verzerrung&quot;&gt;Verzerrung&lt;/h2&gt;
+
+&lt;p&gt;Die Verzerrung ist eine (nichtlineare) Funktion der Deformation, die im eindimensionalen Sinne monoton steigend im Sinne der Streckung sein soll. Für den Grenzfall unendlich großer und kleiner Streckungen soll sie idealerweise gegen $\pm \infty$ gehen.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;An dieser Steller fragt man sich vielleicht&lt;/strong&gt;: Warum &lt;em&gt;soll&lt;/em&gt; und nicht &lt;em&gt;muss&lt;/em&gt;? Nun, Ziel einer strukturmechanischen Berechnung ist es ja, ein physikalisch stabiles Materialverhalten abzubilden. Aber was heißt denn konkret &lt;em&gt;physikalisch stabil&lt;/em&gt;? Darunter versteht man eine monoton steigende Normalkraft bei zunehmender Streckung. Erfüllt nun bereits die Verzerrung bis hin zu den Limits unendlicher Streckung diese Anforderungen, so hat man bereits eine gute Basis für die konstitutive Materialmodellierung. Aber keine Garantie - dazu später mehr.&lt;/p&gt;
+
+&lt;p&gt;Um den undeformierten Zustand soll zudem die Steigung eins gelten, um im Falle infinitesimaler Streckungen die Ingenieurverzerrungen zu erhalten.&lt;/p&gt;
+
+&lt;p&gt;Seth und Hill haben für eine generalisierte Veerzerrung folgenden Vorschlag für die Verzerrungen gemacht:&lt;/p&gt;
+
+&lt;p&gt;$e^{(k)} = \frac{1}{k} (\lambda^k-1)$&lt;/p&gt;
+
+&lt;p&gt;Für den Sonderfall $k=0$ führt dies auf die log. Verzerrungen.&lt;/p&gt;
+
+&lt;p&gt;$e^{(0)} = ln(\lambda)$&lt;/p&gt;
+
+&lt;p&gt;Die Änderung der Verzerrung im Sinne der Streckung, mit anderen Worten die erste Variation der Verzerrung, berechnet sich zu:&lt;/p&gt;
+
+&lt;p&gt;$\delta e^{(k)} = \frac{\lambda^k}{\lambda}~\delta \lambda$ .&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Hinweis&lt;/strong&gt;: Auch hier gilt wieder: Die Streckung muss für Stäbe im dreidimensionalen Raum zunächst aus der Wurzel des Streckungsquadrats berechnet werden. Erst dann darf in Stabrichtung die (k)-Modifikation erfolgen. Einzig für den Sonderfall $k=2$ ist kein Wurzelziehen nötig, da die quadratische Länge des differentiellen Stabelements direkt aus dem Inprodukt der Stabvektoren resultiert.&lt;/p&gt;
+
+&lt;h2 id=&quot;kinetik-kräftegleichgewicht-am-deformierten-system&quot;&gt;Kinetik (Kräftegleichgewicht am deformierten System)&lt;/h2&gt;
+
+&lt;p&gt;Wir betrachten ein differentielles Stabelement eines eindimensionalen Festkörpers (eines Stabs) in seiner deformierten Konfiguration und schneiden dieses frei. Im allgemeinen Belastungsfall treten am negativen und positiven Schnittufer voneinander verschiedene Normalkräfte auf. Die Normalkraft am negativen Schnittufer stellt den konstanten Grundanteil der Normalkraft dar und das positive Schnittufer beinhaltet zusätzlich differentielle Normalkraftänderungen entlang der deformierten Längskoordinate. Desweiteren wird eine Volumslast entlang der Längskoordinate mit vorerst beliebiger Abhängigkeit zur Längskoordinate angenommen. Das Kräftegleichgewicht am freigeschnittenen differentiellen Linienlement lautet:&lt;/p&gt;
+
+&lt;p&gt;$\sum N = 0 = -\sigma(x)~a(x) + \sigma(x)~a(x) + \frac{d\sigma(x)}{dx}~a(x) + b(x)~a(x)$&lt;/p&gt;
+
+&lt;p&gt;Nach Division durch die deformierte Querschnittsfläche bleibt&lt;/p&gt;
+
+&lt;p&gt;$\frac{d\sigma}{dx} + b = 0$&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Hinweis:&lt;/strong&gt; Das differentielle Kräftegleichgewicht wird im Mehrdimensionalen zur Vektorgleichung $\boldsymbol{div}(\boldsymbol{\sigma})+\boldsymbol{b} = \boldsymbol{0}$.&lt;/p&gt;
+
+&lt;h2 id=&quot;konstitution&quot;&gt;Konstitution&lt;/h2&gt;
+
+&lt;p&gt;Im letzten Schritt müssen wir noch eine Verbindung zwischen der Verzerrung und dem Kräftegleichgewicht herstellen, indem wir das Materialverhalten miteinbeziehen: Wir verheiraten die Verzerrung mit der Normalkraft über das konstitutive Materialgesetz, dem Ehevertrag wenn man so will. Wir fordern außerdem, dass dieses Materialgesetz im Sinne eines Potentials als Verzerrungsenergiefunktion vorliegen soll, was uns zum Begriff der Hyperelastizität führt.&lt;/p&gt;
+
+&lt;h3 id=&quot;hyperelastizität&quot;&gt;Hyperelastizität&lt;/h3&gt;
+
+&lt;p&gt;Hyperelastizität bedeutet, dass eine Verzerrungsenergiefunktion je Einheit Masse existiert. Diese Verzerrungsenergiefunktion charakterisiert das Materialverhalten im Sinne der Deformation. Warum bezieht man sie je Einheit Masse? Weil die Masse die einzige Konstante eines Festkörpers während der Deformation darstellt. Das differentielle Potential der inneren Kräfte ist folglich das Produkt aus Verzerrungsenergiefunktion je Einheit Masse und differentieller Masse. Um die Potentialbeiträge der externen Kräfte kümmern wir uns derzeit nicht.&lt;/p&gt;
+
+&lt;p&gt;$d\Pi_{int} = \psi_m(e^{(k)})~dm$&lt;/p&gt;
+
+&lt;p&gt;Wie bereits erwähnt: Die Masse eines differentiellen Stabelements ist in einem geschlossenen System über den gesamten Deformationsvorgang hinweg konstant.&lt;/p&gt;
+
+&lt;p&gt;$dm = \rho~a~dx = \rho_0~A~dX$&lt;/p&gt;
+
+&lt;p&gt;Multipliziert man die Dichte der unverformten Konfiguration mit der Verzerrungsenergiefunktion je Einheit Masse, so führt das auf die Verzerrungsenergiefunktion je Einheit unverformtes Volumen. Für ein differentielles Stabelement ist das differentielle Volumen durch das Produkt aus unverformter Querschnittsfläche und differentieller Länge gegeben.&lt;/p&gt;
+
+&lt;p&gt;$d\Pi_{int} = \psi(e^{(k)})~A~dX$&lt;/p&gt;
+
+&lt;p&gt;Die Variation dieser Verzerrungsenergiefunktion nach der Deformation führt auf arbeitskonjugierte Paare aus Spannung und inkrementeller Verzerrung. Die Ableitung der Verzerrungsenergiefunktion nach der Verzerrung wird als Spannung identifiziert, weil das Paar einen inkrementellen Arbeitsausdruck der inneren Kräfte ergibt.&lt;/p&gt;
+
+&lt;p&gt;$\delta d\Pi_{int} = \delta\psi(e^{(k)})~A~dX$&lt;/p&gt;
+
+&lt;p&gt;$\delta d\Pi_{int} = \frac{d\psi(e^{(k)})}{de^{(k)}} \delta e^{(k)} ~A~dX$&lt;/p&gt;
+
+&lt;p&gt;Daraus erhält man die zur inkrementellen Verzerrungsgröße $\delta e^{(k)}$ zugehörige Spannung&lt;/p&gt;
+
+&lt;p&gt;$s^{(k)}=\frac{d\psi(e^{(k)})}{de^{(k)}}$&lt;/p&gt;
+
+&lt;h3 id=&quot;lineare-spannungs-verzerrungs-relation&quot;&gt;Lineare Spannungs-Verzerrungs-Relation&lt;/h3&gt;
+
+&lt;p&gt;Um eine lineare Spannungs-Verzerrungs-Verkoppelung zu erhalten, muss die Verzerrungsenergiefunktion eine quadratische Funktion der Verzerrung sein. Der E-Modul dient hierbei als Materialparameter.&lt;/p&gt;
+
+&lt;p&gt;$\psi(e^{(k)}) = E~{e^{(k)}}^2$&lt;/p&gt;
+
+&lt;p&gt;$s^{(k)}=E~e^{(k)}$&lt;/p&gt;
+
+&lt;h3 id=&quot;wie-kommt-man-denn-jetzt-zur-stab-normalkraft&quot;&gt;Wie kommt man denn jetzt zur Stab-Normalkraft?&lt;/h3&gt;
+
+&lt;p&gt;Soweit, so gut. Wir haben eine fiktive (k)-Spannung berechnet. Wie schaffen wir es jetzt, einen Zusammenhang zur Normalkraft herzustellen? Alles der Reihe nach. Die Normalkraft ist für ein differentielles Stabelement als Produkt aus Cauchy-Spannung und deformierter Querschnittsfläche gegeben (auch bekannt als Cauchysches Fundamentaltheorem).&lt;/p&gt;
+
+&lt;p&gt;$N = \sigma~a$&lt;/p&gt;
+
+&lt;p&gt;Durch partielle Integration des differentiellen Kräftegleichgewichts (wird eventuell in einem weiteren Beitrag genauer erläutert…) erhält man, dass die virtuelle Arbeit der inneren Kräfte je Einheit deformiertes Volumen als Produkt von Cauchy-Spannung und räumlichen Verschiebungsgradienten definiert ist. Das negative Vorzeichen kommt durch die partielle Integration zustande: Die Summe aller Randterme minus der Änderung im Inneren ist gleich Null. Diese Änderung im Inneren ist, naja, etwas salopp gesagt, die virtuelle Arbeit der inneren Kräfte.&lt;/p&gt;
+
+&lt;p&gt;$\delta dW_{int} = - \sigma~\frac{d\delta U}{dx}~dv$&lt;/p&gt;
+
+&lt;p&gt;$\delta dW_{int} = - \sigma~\delta\lambda \lambda^{-1}~a~dx$&lt;/p&gt;
+
+&lt;p&gt;Durch einen Vergleich&lt;/p&gt;
+
+&lt;p&gt;$s^{(k)}\lambda^k \delta\lambda\lambda^{-1} A dX = \sigma~\delta\lambda \lambda^{-1}~a~dx$&lt;/p&gt;
+
+&lt;p&gt;erhält man die Cauchy-Spannung in Abhängigkeit der Verzerrungsenergiefunktion&lt;/p&gt;
+
+&lt;p&gt;$\sigma = \frac{1}{J} s^{(k)}\lambda^k$&lt;/p&gt;
+
+&lt;p&gt;und weiters die Normalkraft als Funktion der Verzerrung (und in weiterer Folge der Streckung)&lt;/p&gt;
+
+&lt;p&gt;$N = s^{(k)}\lambda^{k-1} A$&lt;/p&gt;
+
+&lt;p&gt;$N = EA~e^{(k)}\lambda^{k-1}$&lt;/p&gt;
+
+&lt;p&gt;Man sieht also, dass die Normalkraft trotz aller Bemühungen &lt;strong&gt;nicht&lt;/strong&gt;-linear mit der Verzerrung interagiert! Die Umrechnung des Verzerrungsinkrements auf das Inkrement der Streckung macht uns hier einen Strich durch die Rechnung. Das ist im Grunde aber nicht weiter schlimm, es ist eben so.&lt;/p&gt;
+
+&lt;p&gt;Da wir jetzt hinsichtlich der Kinematik, der Kinetik und der Konstitution alle Vorbereitungen getroffen haben, geht es im nächsten Beitrag weiter mit der Diskretisierung.&lt;/p&gt;</content><author><name></name></author><category term="markdown" /><summary type="html">Einleitung</summary></entry><entry><title type="html">How to install a Fortran Compiler for MSC.Marc</title><link href="https://adtzlr.github.io/blog/markdown/2018/02/06/FortranMarc.html" rel="alternate" type="text/html" title="How to install a Fortran Compiler for MSC.Marc" /><published>2018-02-06T00:00:00-06:00</published><updated>2018-02-06T00:00:00-06:00</updated><id>https://adtzlr.github.io/blog/markdown/2018/02/06/FortranMarc</id><content type="html" xml:base="https://adtzlr.github.io/blog/markdown/2018/02/06/FortranMarc.html">&lt;h1 id=&quot;how-to-install-a-fortran-compiler-for-mscmarc&quot;&gt;How to install a Fortran Compiler for MSC.Marc&lt;/h1&gt;
 
 &lt;p&gt;In this post I’ll discuss all the necessary steps to install the Intel Fortran compiler for MSC.Marc. At first we have to find out the necessary tools to compile fortran subroutines on Windows. In every Release Guide of MSC.Marc there is a table which versions of the Intel Compiler are compatible. Make sure to download this specific versions as even newer compiler versions may lead to problems. For MSC.Marc 2016 the Fortran Version is &lt;strong&gt;Intel XE2015&lt;/strong&gt; and &lt;strong&gt;Microsoft Visual Studio 2013&lt;/strong&gt;. Be sure to uninstall &lt;em&gt;all&lt;/em&gt; versions of MSC.Marc before continuing with the following steps.&lt;/p&gt;
 

@@ -12,6 +12,8 @@ github_username: adtzlr
 # you can comment the below line out if your repo name is not different than your baseurl
 github_repo: "blog"
 
+avatar: https://avatars1.githubusercontent.com/u/5793153?s=460&amp;v=4
+
 # OPTIONAL: override baseurl and url if using a custom domain
 # Note: leave out the trailing / from this value. 
 url: "https://adtzlr.github.io" # the base hostname & protocol for your site, e.g. http://example.com

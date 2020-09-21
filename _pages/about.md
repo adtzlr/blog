@@ -4,7 +4,7 @@ title: About Me
 permalink: /about/
 ---
 
-<div class="img-circular"></div>
+<div class="img-rounded"></div>
 
 My Name is Andreas Dutzler and I'm a University Assistent at Graz University of Technology at the Institute of Structural Durability and Railway Technology in the area of mechanical engineering.
 

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Initial Release of Tensor Toolbox for Fortran | fastpages</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Initial Release of Tensor Toolbox for Fortran" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="tensor toolbox for fortran" />
+<meta property="og:description" content="tensor toolbox for fortran" />
+<link rel="canonical" href="https://adtzlr.github.io/blog/markdown/2017/11/26/TensorToolbox.html" />
+<meta property="og:url" content="https://adtzlr.github.io/blog/markdown/2017/11/26/TensorToolbox.html" />
+<meta property="og:site_name" content="fastpages" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-11-26T00:00:00-06:00" />
+<script type="application/ld+json">
+{"description":"tensor toolbox for fortran","url":"https://adtzlr.github.io/blog/markdown/2017/11/26/TensorToolbox.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://adtzlr.github.io/blog/markdown/2017/11/26/TensorToolbox.html"},"headline":"Initial Release of Tensor Toolbox for Fortran","dateModified":"2017-11-26T00:00:00-06:00","datePublished":"2017-11-26T00:00:00-06:00","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://adtzlr.github.io/blog/feed.xml" title="fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper">
+<a class="site-title" rel="author" href="/blog/">fastpages</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewbox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+<a class="page-link" href="/blog/about/">About Me</a><a class="page-link" href="/blog/search/">Search</a><a class="page-link" href="/blog/categories/">Tags</a>
+</div>
+      </nav>
+</div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Initial Release of Tensor Toolbox for Fortran</h1>
+<p class="page-description">tensor toolbox for fortran</p>
+<p class="post-meta post-meta-title"><time class="dt-published" datetime="2017-11-26T00:00:00-06:00" itemprop="datePublished">
+        Nov 26, 2017
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      2 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i> 
+      
+        <a class="category-tags-link" href="/blog/categories/#markdown">markdown</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h1">
+<a href="#introducing-tensor-toolbox-for-fortran">Introducing Tensor Toolbox for Fortran</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#a-short-overview">A short overview</a></li>
+<li class="toc-entry toc-h2"><a href="#basic-usage">Basic Usage</a></li>
+<li class="toc-entry toc-h2"><a href="#neo-hookean-material">Neo-Hookean Material</a></li>
+<li class="toc-entry toc-h2"><a href="#sources">Sources</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="introducing-tensor-toolbox-for-fortran">
+<a class="anchor" href="#introducing-tensor-toolbox-for-fortran" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introducing Tensor Toolbox for Fortran</h1>
+
+<p><a href="https://github.com/adtzlr/ttb">Tensor Toolbox for Modern Fortran (ttb)</a> is a Fortran module to add Tensor features to Fortran. It provides derived data types from general arrays for rank 2 and rank 4 tensors (and it’s symmetric variants). Computation of the deviatoric part, fourth-order identity tensor, dot product, double-dot product, etc. is available without constructing any loops by the user. For further information read the full post or have a look at the <a href="https://github.com/adtzlr/ttb">ttb-repository</a>.</p>
+
+<h2 id="a-short-overview">
+<a class="anchor" href="#a-short-overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>A short overview</h2>
+
+<p>Commercial FEM software packages often offer interfaces (user subroutines written in Fortran) for custom defined user materials like UMAT in Abaqus or HYPELA2 in MSC.Marc. Unlike other scientific programming languages like MATLAB or Python Fortran is not as comfortable to use when dealing with high level programming features of tensor manipulation. On the other hand it’s super fast - so why not combine the handy features from MATLAB or Python’s NumPy/Scipy with the speed of Fortran? That’s the reason why I started working on a simple but effective module called <strong>Tensor Toolbox for Modern Fortran</strong>. I adopted the idea to my needs from <a href="http://nbn-resolving.de/urn:nbn:de:bsz:ch1-qucosa-222075">Naumann, C. (2016)</a>.</p>
+
+<p>It provides the following basic operations for tensor calculus (all written in double precision <code class="language-plaintext highlighter-rouge">real(kind=8)</code>):</p>
+<ul>
+  <li>Dot Product <code class="language-plaintext highlighter-rouge">C(i,j) = A(i,k) B(k,j)</code> written as <code class="language-plaintext highlighter-rouge">C = A*B</code> or <code class="language-plaintext highlighter-rouge">C = A.dot.B</code>
+</li>
+  <li>Double Dot Product <code class="language-plaintext highlighter-rouge">C = A(i,j) B(i,j)</code> written as <code class="language-plaintext highlighter-rouge">C = A**B</code> or <code class="language-plaintext highlighter-rouge">C = A.ddot.B</code>
+</li>
+  <li>Dyadic Product <code class="language-plaintext highlighter-rouge">C(i,j,k,l) = A(i,j) B(k,l)</code> written as <code class="language-plaintext highlighter-rouge">C = A.dya.B</code>
+</li>
+  <li>Addition / Subtraction <code class="language-plaintext highlighter-rouge">C(i,j) = A(i,j) + B(i,j)</code> written as <code class="language-plaintext highlighter-rouge">C = A+B</code> or <code class="language-plaintext highlighter-rouge">C = A.add.B</code>
+</li>
+  <li>Multiplication and Divison by a Scalar <code class="language-plaintext highlighter-rouge">C(i,j) = A(i,j) - B(i,j)</code> written as <code class="language-plaintext highlighter-rouge">C = A-B</code> or <code class="language-plaintext highlighter-rouge">C = A.sub.B</code>
+</li>
+  <li>Deviatoric Part of Tensor  <code class="language-plaintext highlighter-rouge">dev(C) = C - tr(C)/3 * Eye</code> written as <code class="language-plaintext highlighter-rouge">dev(C)</code>
+</li>
+  <li>Transpose and Permutation of indices <code class="language-plaintext highlighter-rouge">B(i,j,k,l) = A(i,k,j,l)</code> written as <code class="language-plaintext highlighter-rouge">B = permute(A,1,3,2,4)</code>
+</li>
+  <li>Assigment of a real-valued Scalar to all components of a Tensor <code class="language-plaintext highlighter-rouge">A = 0.0</code> or <code class="language-plaintext highlighter-rouge">A = 0.d0</code>
+</li>
+  <li>Assigment of a real-valued Array to a Tensor with matching dimensions <code class="language-plaintext highlighter-rouge">A = B</code> where B is an Array and A a Tensor</li>
+  <li>Rank 2 Identity tensor of input type <code class="language-plaintext highlighter-rouge">Eye = identity2(Eye)</code> with <code class="language-plaintext highlighter-rouge">C = Eye*C</code>
+</li>
+  <li>Rank 4 Identity tensor (symmetric variant) of input type <code class="language-plaintext highlighter-rouge">I4 = identity4(Eye)</code> with <code class="language-plaintext highlighter-rouge">C = I4(Eye)**C</code> or <code class="language-plaintext highlighter-rouge">inv(C) = identitiy4(inv(C))**C</code>
+</li>
+</ul>
+
+<h2 id="basic-usage">
+<a class="anchor" href="#basic-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basic Usage</h2>
+<p>The most basic example on how to use this module is to <a href="https://github.com/adtzlr/ttb/archive/master.zip">download the module</a>, put the ‘ttb’-Folder in your working directory and add two lines of code:</p>
+
+<div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">include</span><span class="w"> </span><span class="s1">'ttb/ttb_library.f'</span><span class="w">
+
+</span><span class="k">program</span><span class="w"> </span><span class="n">script101_ttb</span><span class="w">
+</span><span class="k">use</span><span class="w"> </span><span class="n">Tensor</span><span class="w">
+</span><span class="k">implicit</span><span class="w"> </span><span class="k">none</span><span class="w">
+</span><span class="c1">! user code</span><span class="w">
+
+</span><span class="k">end</span><span class="w"> </span><span class="k">program</span><span class="w"> </span><span class="n">script101_ttb</span><span class="w">
+</span></code></pre></div></div>
+<p>The <code class="language-plaintext highlighter-rouge">include 'ttb/ttb_library.f'</code> statement replaces the line with the content of the ttb-module. The first line in a program or subroutine is now a <code class="language-plaintext highlighter-rouge">use Tensor</code> statement. That’s it - now you’re ready to go.</p>
+
+<h2 id="neo-hookean-material">
+<a class="anchor" href="#neo-hookean-material" aria-hidden="true"><span class="octicon octicon-link"></span></a>Neo-Hookean Material</h2>
+<p>With the help of the Tensor module the Second Piola-Kirchhoff stress tensor <code class="language-plaintext highlighter-rouge">S</code> of a nearly-incompressible Neo-Hookean material model is basically a one-liner:</p>
+
+<div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dev</span><span class="p">(</span><span class="n">det</span><span class="p">(</span><span class="n">F</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mf">-2.</span><span class="p">/</span><span class="mf">3.</span><span class="p">)</span><span class="o">*</span><span class="n">Eye</span><span class="o">*</span><span class="n">C</span><span class="p">)</span><span class="o">*</span><span class="n">inv</span><span class="p">(</span><span class="n">C</span><span class="p">)</span><span class="o">+</span><span class="n">p</span><span class="o">*</span><span class="n">det</span><span class="p">(</span><span class="n">F</span><span class="p">)</span><span class="o">*</span><span class="n">inv</span><span class="p">(</span><span class="n">C</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="sources">
+<a class="anchor" href="#sources" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sources</h2>
+<p>Naumann, C.: <a href="http://nbn-resolving.de/urn:nbn:de:bsz:ch1-qucosa-222075">Chemisch-mechanisch gekoppelte Modellierung und Simulation oxidativer Alterungsvorgänge in Gummibauteilen (German)</a>. PhD thesis. Fakultät für Maschinenbau der Technischen Universität Chemnitz, 2016.</p>
+
+  </div>
+<a class="u-url" href="/blog/markdown/2017/11/26/TensorToolbox.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links">
+<ul class="social-media-list">
+<li><a rel="me" href="https://github.com/fastai" title="fastai"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#github"></use></svg></a></li>
+<li><a rel="me" href="https://twitter.com/fastdotai" title="fastdotai"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#twitter"></use></svg></a></li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

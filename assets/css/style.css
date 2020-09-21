@@ -478,4 +478,8 @@ pre code { font-size: 15px !important; }
 
 p code { font-size: 19px; }
 
+.img-circular { width: 200px; height: 200px; background-image: url("https://avatars1.githubusercontent.com/u/5793153?s=460&v=4"); background-size: cover; display: block; }
+
+.img-circular { width: 200px; height: 200px; background-image: url("https://avatars1.githubusercontent.com/u/5793153?s=460&v=4"); background-size: cover; display: block; border-radius: 50px; -webkit-border-radius: 50px; -moz-border-radius: 50px; }
+
 /*# sourceMappingURL=style.css.map */

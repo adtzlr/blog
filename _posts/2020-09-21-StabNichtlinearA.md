@@ -108,7 +108,7 @@ $s^{(k)}=\frac{d\psi(e^{(k)})}{de^{(k)}}$
 
 Um eine lineare Spannungs-Verzerrungs-Verkoppelung zu erhalten, muss die Verzerrungsenergiefunktion eine quadratische Funktion der Verzerrung sein. Der E-Modul dient hierbei als Materialparameter.
 
-$\psi(e^{(k)}) = E~{e^{(k)}}^2$
+$\psi(e^{(k)}) = \frac{E}{2}~{e^{(k)}}^2$
 
 $s^{(k)}=E~e^{(k)}$
 

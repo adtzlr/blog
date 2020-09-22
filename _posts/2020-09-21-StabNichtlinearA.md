@@ -12,21 +12,15 @@ In dieser Beitragsserie werden wir die Grundlagen der geometrisch exakten eindim
 
 ## Kinematik eines Stabelements
 
-In der undeformierten Konfiguration eines Festkörpers - also eines Stabes - werden die Anfangs- und Endpunktkoordinaten ein differentiellen Stabelements  mit $X_A=X$ sowie $X_E=X+dX$ identifiziert.
+In der undeformierten Konfiguration eines Festkörpers - also eines Stabes - wird das differentielle Stabelement an der Position $X$ und mit der Länge $dX$ identifiziert.
 
 Die Deformation wird durch eine eins-zu-eins Abbildung der Punktkoordinaten der undeformierten Konfiguration in die deformierte Konfiguration beschrieben.
 
-![Punktidentifikation](Punktidentifikation.png)
-
-
+![Deformation](DeformationStab.png)
 
 $x = \chi(X)$
 
-Dies führt auf die Anfangs- und Endpunktkoordinaten der deformierten Konfiguration $x_A=x$ sowie $x_E=x+dx$.
-
-Der eindimensionale Deformationsgradient mit Bezug auf die unverformte Konfiguration beinhaltet die differentielle Längenänderung in einem Bereich rund um einen in der undeformierten Konfiguration identifizierten Punkt $X$.
-
-![Linienidentifikation](Linienidentifikation.png)
+Dies führt auf die Koordinate der deformierten Konfiguration. Der eindimensionale Deformationsgradient mit Bezug auf die unverformte Konfiguration beinhaltet die differentielle Längenänderung in einem Bereich rund um einen in der undeformierten Konfiguration identifizierten Punkt $X$.
 
 $F=\frac{d\chi(X)}{dX} = \frac{dx}{dX}$
 

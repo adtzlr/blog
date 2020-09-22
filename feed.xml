@@ -1,22 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="https://adtzlr.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://adtzlr.github.io/blog/" rel="alternate" type="text/html" /><updated>2020-09-21T14:15:56-05:00</updated><id>https://adtzlr.github.io/blog/feed.xml</id><title type="html">adtzlr</title><subtitle>Andreas Dutzler</subtitle><entry><title type="html">Geometrisch exakte eindimensionale (1d) Finite-Elemente-Methode</title><link href="https://adtzlr.github.io/blog/markdown/2020/09/21/StabNichtlinearA.html" rel="alternate" type="text/html" title="Geometrisch exakte eindimensionale (1d) Finite-Elemente-Methode" /><published>2020-09-21T00:00:00-05:00</published><updated>2020-09-21T00:00:00-05:00</updated><id>https://adtzlr.github.io/blog/markdown/2020/09/21/StabNichtlinearA</id><content type="html" xml:base="https://adtzlr.github.io/blog/markdown/2020/09/21/StabNichtlinearA.html">&lt;h1 id=&quot;einleitung&quot;&gt;Einleitung&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="https://adtzlr.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://adtzlr.github.io/blog/" rel="alternate" type="text/html" /><updated>2020-09-22T06:41:30-05:00</updated><id>https://adtzlr.github.io/blog/feed.xml</id><title type="html">adtzlr</title><subtitle>Andreas Dutzler</subtitle><entry><title type="html">Geometrisch exakte eindimensionale (1d) Finite-Elemente-Methode</title><link href="https://adtzlr.github.io/blog/markdown/2020/09/21/StabNichtlinearA.html" rel="alternate" type="text/html" title="Geometrisch exakte eindimensionale (1d) Finite-Elemente-Methode" /><published>2020-09-21T00:00:00-05:00</published><updated>2020-09-21T00:00:00-05:00</updated><id>https://adtzlr.github.io/blog/markdown/2020/09/21/StabNichtlinearA</id><content type="html" xml:base="https://adtzlr.github.io/blog/markdown/2020/09/21/StabNichtlinearA.html">&lt;h1 id=&quot;einleitung&quot;&gt;Einleitung&lt;/h1&gt;
 
 &lt;p&gt;In dieser Beitragsserie werden wir die Grundlagen der geometrisch exakten eindimensionalen Finite-Elemente-Methode mit beliebiger Materialnichtlinearität zur Berechnung statischer, strukturmechanischer Aufgabenstellungen erarbeiten. Manche Dinge sind nicht direkt auf ein Stabelement im dreidimensionalen Raum übertragbar, darauf wird im Beitrag an den nötigen Stellen immer wieder eingegangen. Und die Beitragsreihe soll vor allem eines zeigen: Erklärt man die Dinge der Reihe nach, dann ist die Thematik ohne großes Vorwissen für Interessierte recht einfach verständlich.&lt;/p&gt;
 
 &lt;h2 id=&quot;kinematik-eines-stabelements&quot;&gt;Kinematik eines Stabelements&lt;/h2&gt;
 
-&lt;p&gt;In der undeformierten Konfiguration eines Festkörpers - also eines Stabes - werden die Anfangs- und Endpunktkoordinaten ein differentiellen Stabelements  mit $X_A=X$ sowie $X_E=X+dX$ identifiziert.&lt;/p&gt;
+&lt;p&gt;In der undeformierten Konfiguration eines Festkörpers - also eines Stabes - wird das differentielle Stabelement an der Position $X$ und mit der Länge $dX$ identifiziert.&lt;/p&gt;
 
 &lt;p&gt;Die Deformation wird durch eine eins-zu-eins Abbildung der Punktkoordinaten der undeformierten Konfiguration in die deformierte Konfiguration beschrieben.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;Punktidentifikation.png&quot; alt=&quot;Punktidentifikation&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;DeformationStab.png&quot; alt=&quot;Deformation&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;$x = \chi(X)$&lt;/p&gt;
 
-&lt;p&gt;Dies führt auf die Anfangs- und Endpunktkoordinaten der deformierten Konfiguration $x_A=x$ sowie $x_E=x+dx$.&lt;/p&gt;
-
-&lt;p&gt;Der eindimensionale Deformationsgradient mit Bezug auf die unverformte Konfiguration beinhaltet die differentielle Längenänderung in einem Bereich rund um einen in der undeformierten Konfiguration identifizierten Punkt $X$.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;Linienidentifikation.png&quot; alt=&quot;Linienidentifikation&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Dies führt auf die Koordinate der deformierten Konfiguration. Der eindimensionale Deformationsgradient mit Bezug auf die unverformte Konfiguration beinhaltet die differentielle Längenänderung in einem Bereich rund um einen in der undeformierten Konfiguration identifizierten Punkt $X$.&lt;/p&gt;
 
 &lt;p&gt;$F=\frac{d\chi(X)}{dX} = \frac{dx}{dX}$&lt;/p&gt;
 

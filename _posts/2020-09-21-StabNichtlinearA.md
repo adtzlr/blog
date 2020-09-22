@@ -16,7 +16,7 @@ In der undeformierten Konfiguration eines Festkörpers - also eines Stabes - wir
 
 Die Deformation wird durch eine eins-zu-eins Abbildung der Punktkoordinaten der undeformierten Konfiguration in die deformierte Konfiguration beschrieben.
 
-![Deformation](DeformationStab.png)
+![]({{ site.baseurl }}/images/DeformationStab.png "Deformation eines differentiellen Stabelements")
 
 $x = \chi(X)$
 

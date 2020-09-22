@@ -10,7 +10,7 @@ title: Geometrisch exakte eindimensionale (1d) Finite-Elemente-Methode
 
 In dieser Beitragsserie werden wir die Grundlagen der geometrisch exakten eindimensionalen Finite-Elemente-Methode mit beliebiger Materialnichtlinearität zur Berechnung statischer, strukturmechanischer Aufgabenstellungen erarbeiten. Manche Dinge sind nicht direkt auf ein Stabelement im dreidimensionalen Raum übertragbar, darauf wird im Beitrag an den nötigen Stellen immer wieder eingegangen. Und die Beitragsreihe soll vor allem eines zeigen: Erklärt man die Dinge der Reihe nach, dann ist die Thematik ohne großes Vorwissen für Interessierte recht einfach verständlich.
 
-## Kinematik eines Stabelements
+# Kinematik eines Stabelements
 
 In der undeformierten Konfiguration eines Festkörpers - also eines Stabes - wird das differentielle Stabelement an der Position $X$ und mit der Länge $dX$ identifiziert.
 
@@ -38,7 +38,7 @@ Damit ist die Deformation eines differentiellen Stabelements eindeutig charakter
 
 **Hinweis**: Die direkte Berechnung der Streckung entlang eines im Raum liegenden Stabes ist auf diese Art nicht möglich! Hier muss über das Skalarprodukt $dl^2 = d\boldsymbol{x}^T d\boldsymbol{x}$ die quadratische Streckung berechnet werden (Satz von Pythagoras). Danach wird durch Ziehen der Wurzel die Stabstreckung ermittelt. Die Wurzel darf man aber nur *entlang des Stabes* ziehen, wenn man das so sagen will. Die Skalarprodukte der Stabvektoren sind die einzige Möglichkeit, um im Raum überhaupt eine Längenmessung etablieren zu können. Dafür ist auch kein Wurzelziehen nötig.
 
-## Verzerrung
+# Verzerrung
 
 Die Verzerrung ist eine (nichtlineare) Funktion der Deformation, die im eindimensionalen Sinne monoton steigend im Sinne der Streckung sein soll. Für den Grenzfall unendlich großer und kleiner Streckungen soll sie idealerweise gegen $\pm \infty$ gehen. 
 
@@ -62,7 +62,7 @@ $\delta e^{(k)} = \frac{\lambda^k}{\lambda}~\delta \lambda$ .
 
 
 
-## Kinetik (Kräftegleichgewicht am deformierten System)
+# Kinetik (Kräftegleichgewicht am deformierten System)
 
 Wir betrachten ein differentielles Stabelement eines eindimensionalen Festkörpers (eines Stabs) in seiner deformierten Konfiguration und schneiden dieses frei. Im allgemeinen Belastungsfall treten am negativen und positiven Schnittufer voneinander verschiedene Normalkräfte auf. Die Normalkraft am negativen Schnittufer stellt den konstanten Grundanteil der Normalkraft dar und das positive Schnittufer beinhaltet zusätzlich differentielle Normalkraftänderungen entlang der deformierten Längskoordinate. Desweiteren wird eine Volumslast entlang der Längskoordinate mit vorerst beliebiger Abhängigkeit zur Längskoordinate angenommen. Das Kräftegleichgewicht am freigeschnittenen differentiellen Linienlement lautet:
 
@@ -74,7 +74,7 @@ $\frac{d\sigma}{dx} + b = 0$
 
 **Hinweis:** Das differentielle Kräftegleichgewicht wird im Mehrdimensionalen zur Vektorgleichung $\boldsymbol{div}(\boldsymbol{\sigma})+\boldsymbol{b} = \boldsymbol{0}$.
 
-## Konstitution
+# Konstitution
 
 Im letzten Schritt müssen wir noch eine Verbindung zwischen der Verzerrung und dem Kräftegleichgewicht herstellen, indem wir das Materialverhalten miteinbeziehen: Wir verheiraten die Verzerrung mit der Normalkraft über das konstitutive Materialgesetz, dem Ehevertrag wenn man so will. Wir fordern außerdem, dass dieses Materialgesetz im Sinne eines Potentials als Verzerrungsenergiefunktion vorliegen soll, was uns zum Begriff der Hyperelastizität führt.
 
@@ -87,6 +87,8 @@ $d\Pi_{int} = \psi_m(e^{(k)})~dm$
 Wie bereits erwähnt: Die Masse eines differentiellen Stabelements ist in einem geschlossenen System über den gesamten Deformationsvorgang hinweg konstant.
 
 $dm = \rho~a~dx = \rho_0~A~dX$
+
+## Verzerrungsenergiefunktion je Einheit unverformtes Volumen
 
 Multipliziert man die Dichte der unverformten Konfiguration mit der Verzerrungsenergiefunktion je Einheit Masse, so führt das auf die Verzerrungsenergiefunktion je Einheit unverformtes Volumen. Für ein differentielles Stabelement ist das differentielle Volumen durch das Produkt aus unverformter Querschnittsfläche und differentieller Länge gegeben.
 
@@ -102,7 +104,7 @@ Daraus erhält man die zur inkrementellen Verzerrungsgröße $\delta e^{(k)}$ zu
 
 $s^{(k)}=\frac{d\psi(e^{(k)})}{de^{(k)}}$
 
-### Lineare Spannungs-Verzerrungs-Relation
+## Lineare Spannungs-Verzerrungs-Relation
 
 Um eine lineare Spannungs-Verzerrungs-Verkoppelung zu erhalten, muss die Verzerrungsenergiefunktion eine quadratische Funktion der Verzerrung sein. Der E-Modul dient hierbei als Materialparameter.
 
@@ -110,7 +112,7 @@ $\psi(e^{(k)}) = E~{e^{(k)}}^2$
 
 $s^{(k)}=E~e^{(k)}$
 
-### Wie kommt man denn jetzt zur Stab-Normalkraft?
+# Wie kommt man mit all dem Wissen schlussendlich zur Stab-Normalkraft?
 
 Soweit, so gut. Wir haben eine fiktive (k)-Spannung berechnet. Wie schaffen wir es jetzt, einen Zusammenhang zur Normalkraft herzustellen? Alles der Reihe nach. Die Normalkraft ist für ein differentielles Stabelement als Produkt aus Cauchy-Spannung und deformierter Querschnittsfläche gegeben (auch bekannt als Cauchysches Fundamentaltheorem).
 

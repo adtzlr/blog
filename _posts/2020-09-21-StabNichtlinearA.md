@@ -42,7 +42,7 @@ Damit ist die Deformation eines differentiellen Stabelements eindeutig charakter
 
 Die Verzerrung ist eine (nichtlineare) Funktion der Deformation, die im eindimensionalen Sinne monoton steigend im Sinne der Streckung sein soll. Für den Grenzfall unendlich großer und kleiner Streckungen soll sie idealerweise gegen $\pm \infty$ gehen. 
 
-**An dieser Steller fragt man sich vielleicht**: Warum *soll* und nicht *muss*? Nun, Ziel einer strukturmechanischen Berechnung ist es ja, ein physikalisch stabiles Materialverhalten abzubilden. Aber was heißt denn konkret *physikalisch stabil*? Darunter versteht man eine monoton steigende Normalkraft bei zunehmender Streckung. Erfüllt nun bereits die Verzerrung bis hin zu den Limits unendlicher Streckung diese Anforderungen, so hat man bereits eine gute Basis für die konstitutive Materialmodellierung. Aber keine Garantie - dazu später mehr.
+**An dieser Steller fragt man sich vielleicht**: Warum *soll* und nicht *muss*? Nun, *unser* Ziel einer strukturmechanischen Berechnung ist es ja, ein physikalisch stabiles Materialverhalten abzubilden. Aber was heißt denn konkret *physikalisch stabil*? Darunter versteht man eine monoton steigende Normalkraft bei zunehmender Streckung. Erfüllt nun bereits die Verzerrung bis hin zu den Limits unendlicher Streckung diese Anforderungen, so hat man bereits eine gute Basis für die konstitutive Materialmodellierung. Aber keine Garantie - dazu später mehr.
 
 Um den undeformierten Zustand soll zudem die Steigung eins gelten, um im Falle infinitesimaler Streckungen die Ingenieurverzerrungen zu erhalten. 
 

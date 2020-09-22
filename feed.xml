@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="https://adtzlr.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://adtzlr.github.io/blog/" rel="alternate" type="text/html" /><updated>2020-09-22T13:11:24-05:00</updated><id>https://adtzlr.github.io/blog/feed.xml</id><title type="html">adtzlr</title><subtitle>Andreas Dutzler</subtitle><entry><title type="html">Geometrisch exakte eindimensionale (1d) Finite-Elemente-Methode</title><link href="https://adtzlr.github.io/blog/markdown/2020/09/21/StabNichtlinearA.html" rel="alternate" type="text/html" title="Geometrisch exakte eindimensionale (1d) Finite-Elemente-Methode" /><published>2020-09-21T00:00:00-05:00</published><updated>2020-09-21T00:00:00-05:00</updated><id>https://adtzlr.github.io/blog/markdown/2020/09/21/StabNichtlinearA</id><content type="html" xml:base="https://adtzlr.github.io/blog/markdown/2020/09/21/StabNichtlinearA.html">&lt;h1 id=&quot;einleitung&quot;&gt;Einleitung&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="https://adtzlr.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://adtzlr.github.io/blog/" rel="alternate" type="text/html" /><updated>2020-09-22T13:15:32-05:00</updated><id>https://adtzlr.github.io/blog/feed.xml</id><title type="html">adtzlr</title><subtitle>Andreas Dutzler</subtitle><entry><title type="html">Geometrisch exakte eindimensionale (1d) Finite-Elemente-Methode</title><link href="https://adtzlr.github.io/blog/markdown/2020/09/21/StabNichtlinearA.html" rel="alternate" type="text/html" title="Geometrisch exakte eindimensionale (1d) Finite-Elemente-Methode" /><published>2020-09-21T00:00:00-05:00</published><updated>2020-09-21T00:00:00-05:00</updated><id>https://adtzlr.github.io/blog/markdown/2020/09/21/StabNichtlinearA</id><content type="html" xml:base="https://adtzlr.github.io/blog/markdown/2020/09/21/StabNichtlinearA.html">&lt;h1 id=&quot;einleitung&quot;&gt;Einleitung&lt;/h1&gt;
 
 &lt;p&gt;In dieser Beitragsserie werden wir die Grundlagen der geometrisch exakten eindimensionalen Finite-Elemente-Methode mit beliebiger elastischer Materialnichtlinearität zur Berechnung statischer, strukturmechanischer Aufgabenstellungen erarbeiten. Im Zuge dessen werden wir versuchen, eine lineare Verkoppelung der Normalkraft mit einem generalisierten Verzerrungsmaß für ein hyperelastisches Material einzubauen. Das ist dann doch nicht ganz so trivial, wie man zunächst meinen möchte. Manche Dinge sind außerdem nicht direkt vom eindimensionalen Stab auf ein Stabelement im dreidimensionalen Raum übertragbar, darauf wird im Beitrag an den nötigen Stellen immer wieder eingegangen. Und die Beitragsreihe soll vor allem eines zeigen: Erklärt man die Dinge der Reihe nach, dann ist die Thematik ohne großes Vorwissen für Interessierte recht einfach verständlich.&lt;/p&gt;
 
@@ -70,7 +70,11 @@
 
 &lt;h3 id=&quot;hyperelastizität&quot;&gt;Hyperelastizität&lt;/h3&gt;
 
-&lt;p&gt;Hyperelastizität bedeutet, dass eine Verzerrungsenergiefunktion je Einheit Masse existiert. Diese Verzerrungsenergiefunktion charakterisiert das Materialverhalten im Sinne der Deformation. Warum bezieht man sie je Einheit Masse? Weil die Masse die einzige Konstante eines Festkörpers während der Deformation darstellt. Das differentielle Potential der inneren Kräfte ist folglich das Produkt aus Verzerrungsenergiefunktion je Einheit Masse und differentieller Masse. Um die Potentialbeiträge der externen Kräfte kümmern wir uns derzeit nicht.&lt;/p&gt;
+&lt;p&gt;Hyperelastizität bedeutet, dass eine Verzerrungsenergiefunktion je Einheit Masse existiert. Diese Verzerrungsenergiefunktion charakterisiert das Materialverhalten im Sinne der Deformation. Warum bezieht man sie je Einheit Masse? Weil die Masse die einzige Konstante eines Festkörpers während der Deformation darstellt.&lt;/p&gt;
+
+&lt;p&gt;Masse? Wir sind eindimensional unterwegs, wie soll das klappen? Da ein eindimensionaler Stab nur durch eine Querschnittsfläche und einer Dichte eine Masse bekommt, muss die eindimensionale Betrachtungsweise an dieser Stelle zwangsläufig um eine Querschnittsfläche erweitert werden!&lt;/p&gt;
+
+&lt;p&gt;Das differentielle Potential der inneren Kräfte ist folglich das Produkt aus Verzerrungsenergiefunktion je Einheit Masse und differentieller Masse. Um die Potentialbeiträge der externen Kräfte kümmern wir uns derzeit nicht.&lt;/p&gt;
 
 &lt;p&gt;$d\Pi_{int} = \psi_m(e^{(k)})~dm$&lt;/p&gt;
 
@@ -116,7 +120,7 @@
 
 &lt;p&gt;Durch einen Vergleich&lt;/p&gt;
 
-&lt;p&gt;$s^{(k)}\lambda^k \delta\lambda\lambda^{-1} A dX = \sigma~\delta\lambda \lambda^{-1}~a~dx$&lt;/p&gt;
+&lt;p&gt;$s^{(k)}\lambda^k \delta\lambda\lambda^{-1}~A~dX = \sigma~\delta\lambda \lambda^{-1}~a~dx$&lt;/p&gt;
 
 &lt;p&gt;erhält man die Cauchy-Spannung in Abhängigkeit der Verzerrungsenergiefunktion&lt;/p&gt;
 

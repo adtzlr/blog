@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="https://adtzlr.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://adtzlr.github.io/blog/" rel="alternate" type="text/html" /><updated>2020-09-22T06:51:18-05:00</updated><id>https://adtzlr.github.io/blog/feed.xml</id><title type="html">adtzlr</title><subtitle>Andreas Dutzler</subtitle><entry><title type="html">Geometrisch exakte eindimensionale (1d) Finite-Elemente-Methode</title><link href="https://adtzlr.github.io/blog/markdown/2020/09/21/StabNichtlinearA.html" rel="alternate" type="text/html" title="Geometrisch exakte eindimensionale (1d) Finite-Elemente-Methode" /><published>2020-09-21T00:00:00-05:00</published><updated>2020-09-21T00:00:00-05:00</updated><id>https://adtzlr.github.io/blog/markdown/2020/09/21/StabNichtlinearA</id><content type="html" xml:base="https://adtzlr.github.io/blog/markdown/2020/09/21/StabNichtlinearA.html">&lt;h1 id=&quot;einleitung&quot;&gt;Einleitung&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="https://adtzlr.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://adtzlr.github.io/blog/" rel="alternate" type="text/html" /><updated>2020-09-22T12:59:29-05:00</updated><id>https://adtzlr.github.io/blog/feed.xml</id><title type="html">adtzlr</title><subtitle>Andreas Dutzler</subtitle><entry><title type="html">Geometrisch exakte eindimensionale (1d) Finite-Elemente-Methode</title><link href="https://adtzlr.github.io/blog/markdown/2020/09/21/StabNichtlinearA.html" rel="alternate" type="text/html" title="Geometrisch exakte eindimensionale (1d) Finite-Elemente-Methode" /><published>2020-09-21T00:00:00-05:00</published><updated>2020-09-21T00:00:00-05:00</updated><id>https://adtzlr.github.io/blog/markdown/2020/09/21/StabNichtlinearA</id><content type="html" xml:base="https://adtzlr.github.io/blog/markdown/2020/09/21/StabNichtlinearA.html">&lt;h1 id=&quot;einleitung&quot;&gt;Einleitung&lt;/h1&gt;
 
 &lt;p&gt;In dieser Beitragsserie werden wir die Grundlagen der geometrisch exakten eindimensionalen Finite-Elemente-Methode mit beliebiger Materialnichtlinearität zur Berechnung statischer, strukturmechanischer Aufgabenstellungen erarbeiten. Manche Dinge sind nicht direkt auf ein Stabelement im dreidimensionalen Raum übertragbar, darauf wird im Beitrag an den nötigen Stellen immer wieder eingegangen. Und die Beitragsreihe soll vor allem eines zeigen: Erklärt man die Dinge der Reihe nach, dann ist die Thematik ohne großes Vorwissen für Interessierte recht einfach verständlich.&lt;/p&gt;
 
@@ -38,11 +38,11 @@
 
 &lt;p&gt;Um den undeformierten Zustand soll zudem die Steigung eins gelten, um im Falle infinitesimaler Streckungen die Ingenieurverzerrungen zu erhalten.&lt;/p&gt;
 
-&lt;p&gt;Seth und Hill haben für eine generalisierte Veerzerrung folgenden Vorschlag für die Verzerrungen gemacht:&lt;/p&gt;
+&lt;p&gt;Seth und Hill haben für eine generalisierte Verzerrung folgenden Vorschlag gemacht:&lt;/p&gt;
 
 &lt;p&gt;$e^{(k)} = \frac{1}{k} (\lambda^k-1)$&lt;/p&gt;
 
-&lt;p&gt;Für den Sonderfall $k=0$ führt dies auf die log. Verzerrungen.&lt;/p&gt;
+&lt;p&gt;Wenn wir im weiteren Verlauf den Begriff Verzerrung verwenden, meinen wir immer diese generalisierten Verzerrungen. Erwähnenswert ist noch, dass für den Sonderfall $k=0$ die Seth-Hill-Verzerrungen auf die log. Verzerrung führt:&lt;/p&gt;
 
 &lt;p&gt;$e^{(0)} = ln(\lambda)$&lt;/p&gt;
 
@@ -120,9 +120,11 @@
 
 &lt;p&gt;erhält man die Cauchy-Spannung in Abhängigkeit der Verzerrungsenergiefunktion&lt;/p&gt;
 
-&lt;p&gt;$\sigma = \frac{1}{J} s^{(k)}\lambda^k$&lt;/p&gt;
+&lt;p&gt;$\sigma = \frac{1}{J} s^{(k)}\lambda^k$.&lt;/p&gt;
 
-&lt;p&gt;und weiters die Normalkraft als Funktion der Verzerrung (und in weiterer Folge der Streckung)&lt;/p&gt;
+&lt;h2 id=&quot;normalkraft-als-funktion-der-verzerrung&quot;&gt;Normalkraft als Funktion der Verzerrung&lt;/h2&gt;
+
+&lt;p&gt;…und in weiterer Folge der Streckung:&lt;/p&gt;
 
 &lt;p&gt;$N = s^{(k)}\lambda^{k-1} A$&lt;/p&gt;
 
@@ -130,7 +132,27 @@
 
 &lt;p&gt;Man sieht also, dass die Normalkraft trotz aller Bemühungen &lt;strong&gt;nicht&lt;/strong&gt;-linear mit der Verzerrung interagiert! Die Umrechnung des Verzerrungsinkrements auf das Inkrement der Streckung macht uns hier einen Strich durch die Rechnung. Das ist im Grunde aber nicht weiter schlimm, es ist eben so.&lt;/p&gt;
 
-&lt;p&gt;Da wir jetzt hinsichtlich der Kinematik, der Kinetik und der Konstitution alle Vorbereitungen getroffen haben, geht es im nächsten Beitrag weiter mit der Diskretisierung.&lt;/p&gt;</content><author><name></name></author><category term="markdown" /><summary type="html">Einleitung</summary></entry><entry><title type="html">How to install a Fortran Compiler for MSC.Marc</title><link href="https://adtzlr.github.io/blog/markdown/2018/02/06/FortranMarc.html" rel="alternate" type="text/html" title="How to install a Fortran Compiler for MSC.Marc" /><published>2018-02-06T00:00:00-06:00</published><updated>2018-02-06T00:00:00-06:00</updated><id>https://adtzlr.github.io/blog/markdown/2018/02/06/FortranMarc</id><content type="html" xml:base="https://adtzlr.github.io/blog/markdown/2018/02/06/FortranMarc.html">&lt;h1 id=&quot;how-to-install-a-fortran-compiler-for-mscmarc&quot;&gt;How to install a Fortran Compiler for MSC.Marc&lt;/h1&gt;
+&lt;p&gt;Da wir jetzt hinsichtlich der Kinematik, der Kinetik und der Konstitution alle Vorbereitungen getroffen haben, geht es im nächsten Beitrag weiter mit der Diskretisierung. Aber zuvor noch ein letztes Gedankenspiel: Wie müsste eine Verzerrungsenergiefunktion aussehen, die eine lineare Verkoppelung der Normalkraft mit der Verzerrung ermöglicht?&lt;/p&gt;
+
+&lt;h2 id=&quot;normalkraft-als-lineare-funktion-der-verzerrung&quot;&gt;Normalkraft als lineare Funktion der Verzerrung&lt;/h2&gt;
+
+&lt;p&gt;Bei dieser Fragestellung gehen wir nicht vom Formelbau einer gegebenen Verzerrungsenergiefunktion aus, sondern von der gewünschten Formelarchitektur der Normalkraft:&lt;/p&gt;
+
+&lt;p&gt;$N = \frac{d\psi}{d\lambda} A = EA~e^{(k)}$.&lt;/p&gt;
+
+&lt;p&gt;Damit können wir die Verzerrungsfunktion durch einmaliges Integrieren nach der Streckung erzeugen. Die Integrationskonstante bestimmen wir im Anschluss mit der Forderung, dass im undeformierten Zustand keine Verzerrungsenergie auftreten soll.&lt;/p&gt;
+
+&lt;p&gt;$\psi = \int \frac{d\psi}{d\lambda} d\lambda = \int \frac{E}{k}(\lambda^k-1)~d\lambda$&lt;/p&gt;
+
+&lt;p&gt;Versucht man obige Gleichung zu integrieren, so erhält man eine Verzerrungsenergiefunktion, die nicht für alle beliebigen (k)-Exponenten konvex ist. Eine strikt konvexe Verzerrungsenergiefunktion erhalten wir nur dann, wenn wir zunächst den Sonderfall der log. Verzerrungen (k=0) annehmen, dann integrieren und erst zum Schluss die log. Verzerrung durch die allgemeine (k)-Verzerrung ersetzen. Schlussendlich muss man noch einen auftretenden Vorfaktor eliminieren und wir erhalten die Verzerrungsenergiefunktion, die eine lineare Verkoppelung der Normalkraft mit der Verzerrung erzeugt:&lt;/p&gt;
+
+&lt;p&gt;$\psi = \frac{E}{1+k}[\lambda (e^{(k)}-1)] + \psi_0$ 	mit 	$\psi_0 = \frac{1}{1+k}$.&lt;/p&gt;
+
+&lt;p&gt;Als Fleißaufgabe kann man jetzt wieder die fiktive (k)-Spannung berechnen. Hierzu muss man in der Verzerrungsenergiefunktion die Streckung durch die Verzerrung ausdrücken und einmal nach der Verzerrung ableiten.&lt;/p&gt;
+
+&lt;p&gt;$\lambda = (1+k~e^{(k)})^{1/k}$&lt;/p&gt;
+
+&lt;p&gt;$s^{(k)} = \frac{d\psi}{de^{(k)}} = \frac{E}{1+k}\left[\frac{\lambda}{\lambda^k} (e^{(k)}-1)+\lambda\right]$&lt;/p&gt;</content><author><name></name></author><category term="markdown" /><summary type="html">Einleitung</summary></entry><entry><title type="html">How to install a Fortran Compiler for MSC.Marc</title><link href="https://adtzlr.github.io/blog/markdown/2018/02/06/FortranMarc.html" rel="alternate" type="text/html" title="How to install a Fortran Compiler for MSC.Marc" /><published>2018-02-06T00:00:00-06:00</published><updated>2018-02-06T00:00:00-06:00</updated><id>https://adtzlr.github.io/blog/markdown/2018/02/06/FortranMarc</id><content type="html" xml:base="https://adtzlr.github.io/blog/markdown/2018/02/06/FortranMarc.html">&lt;h1 id=&quot;how-to-install-a-fortran-compiler-for-mscmarc&quot;&gt;How to install a Fortran Compiler for MSC.Marc&lt;/h1&gt;
 
 &lt;p&gt;In this post I’ll discuss all the necessary steps to install the Intel Fortran compiler for MSC.Marc. At first we have to find out the necessary tools to compile fortran subroutines on Windows. In every Release Guide of MSC.Marc there is a table which versions of the Intel Compiler are compatible. Make sure to download this specific versions as even newer compiler versions may lead to problems. For MSC.Marc 2016 the Fortran Version is &lt;strong&gt;Intel XE2015&lt;/strong&gt; and &lt;strong&gt;Microsoft Visual Studio 2013&lt;/strong&gt;. Be sure to uninstall &lt;em&gt;all&lt;/em&gt; versions of MSC.Marc before continuing with the following steps.&lt;/p&gt;
 

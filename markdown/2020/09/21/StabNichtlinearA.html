@@ -93,7 +93,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      6 min read
+      8 min read
     
 </span></p>
 
@@ -121,7 +121,12 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#lineare-spannungs-verzerrungs-relation">Lineare Spannungs-Verzerrungs-Relation</a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h1"><a href="#wie-kommt-man-mit-all-dem-wissen-schlussendlich-zur-stab-normalkraft">Wie kommt man mit all dem Wissen schlussendlich zur Stab-Normalkraft?</a></li>
+<li class="toc-entry toc-h1"><a href="#wie-kommt-man-mit-all-dem-wissen-schlussendlich-zur-stab-normalkraft">Wie kommt man mit all dem Wissen schlussendlich zur Stab-Normalkraft?</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#normalkraft-als-funktion-der-verzerrung">Normalkraft als Funktion der Verzerrung</a></li>
+<li class="toc-entry toc-h2"><a href="#normalkraft-als-lineare-funktion-der-verzerrung">Normalkraft als lineare Funktion der Verzerrung</a></li>
+</ul>
+</li>
 </ul><h1 id="einleitung">
 <a class="anchor" href="#einleitung" aria-hidden="true"><span class="octicon octicon-link"></span></a>Einleitung</h1>
 
@@ -165,11 +170,11 @@ window.onload = wrap_img;
 
 <p>Um den undeformierten Zustand soll zudem die Steigung eins gelten, um im Falle infinitesimaler Streckungen die Ingenieurverzerrungen zu erhalten.</p>
 
-<p>Seth und Hill haben für eine generalisierte Veerzerrung folgenden Vorschlag für die Verzerrungen gemacht:</p>
+<p>Seth und Hill haben für eine generalisierte Verzerrung folgenden Vorschlag gemacht:</p>
 
 <p>$e^{(k)} = \frac{1}{k} (\lambda^k-1)$</p>
 
-<p>Für den Sonderfall $k=0$ führt dies auf die log. Verzerrungen.</p>
+<p>Wenn wir im weiteren Verlauf den Begriff Verzerrung verwenden, meinen wir immer diese generalisierten Verzerrungen. Erwähnenswert ist noch, dass für den Sonderfall $k=0$ die Seth-Hill-Verzerrungen auf die log. Verzerrung führt:</p>
 
 <p>$e^{(0)} = ln(\lambda)$</p>
 
@@ -253,9 +258,12 @@ window.onload = wrap_img;
 
 <p>erhält man die Cauchy-Spannung in Abhängigkeit der Verzerrungsenergiefunktion</p>
 
-<p>$\sigma = \frac{1}{J} s^{(k)}\lambda^k$</p>
+<p>$\sigma = \frac{1}{J} s^{(k)}\lambda^k$.</p>
 
-<p>und weiters die Normalkraft als Funktion der Verzerrung (und in weiterer Folge der Streckung)</p>
+<h2 id="normalkraft-als-funktion-der-verzerrung">
+<a class="anchor" href="#normalkraft-als-funktion-der-verzerrung" aria-hidden="true"><span class="octicon octicon-link"></span></a>Normalkraft als Funktion der Verzerrung</h2>
+
+<p>…und in weiterer Folge der Streckung:</p>
 
 <p>$N = s^{(k)}\lambda^{k-1} A$</p>
 
@@ -263,7 +271,28 @@ window.onload = wrap_img;
 
 <p>Man sieht also, dass die Normalkraft trotz aller Bemühungen <strong>nicht</strong>-linear mit der Verzerrung interagiert! Die Umrechnung des Verzerrungsinkrements auf das Inkrement der Streckung macht uns hier einen Strich durch die Rechnung. Das ist im Grunde aber nicht weiter schlimm, es ist eben so.</p>
 
-<p>Da wir jetzt hinsichtlich der Kinematik, der Kinetik und der Konstitution alle Vorbereitungen getroffen haben, geht es im nächsten Beitrag weiter mit der Diskretisierung.</p>
+<p>Da wir jetzt hinsichtlich der Kinematik, der Kinetik und der Konstitution alle Vorbereitungen getroffen haben, geht es im nächsten Beitrag weiter mit der Diskretisierung. Aber zuvor noch ein letztes Gedankenspiel: Wie müsste eine Verzerrungsenergiefunktion aussehen, die eine lineare Verkoppelung der Normalkraft mit der Verzerrung ermöglicht?</p>
+
+<h2 id="normalkraft-als-lineare-funktion-der-verzerrung">
+<a class="anchor" href="#normalkraft-als-lineare-funktion-der-verzerrung" aria-hidden="true"><span class="octicon octicon-link"></span></a>Normalkraft als lineare Funktion der Verzerrung</h2>
+
+<p>Bei dieser Fragestellung gehen wir nicht vom Formelbau einer gegebenen Verzerrungsenergiefunktion aus, sondern von der gewünschten Formelarchitektur der Normalkraft:</p>
+
+<p>$N = \frac{d\psi}{d\lambda} A = EA~e^{(k)}$.</p>
+
+<p>Damit können wir die Verzerrungsfunktion durch einmaliges Integrieren nach der Streckung erzeugen. Die Integrationskonstante bestimmen wir im Anschluss mit der Forderung, dass im undeformierten Zustand keine Verzerrungsenergie auftreten soll.</p>
+
+<p>$\psi = \int \frac{d\psi}{d\lambda} d\lambda = \int \frac{E}{k}(\lambda^k-1)~d\lambda$</p>
+
+<p>Versucht man obige Gleichung zu integrieren, so erhält man eine Verzerrungsenergiefunktion, die nicht für alle beliebigen (k)-Exponenten konvex ist. Eine strikt konvexe Verzerrungsenergiefunktion erhalten wir nur dann, wenn wir zunächst den Sonderfall der log. Verzerrungen (k=0) annehmen, dann integrieren und erst zum Schluss die log. Verzerrung durch die allgemeine (k)-Verzerrung ersetzen. Schlussendlich muss man noch einen auftretenden Vorfaktor eliminieren und wir erhalten die Verzerrungsenergiefunktion, die eine lineare Verkoppelung der Normalkraft mit der Verzerrung erzeugt:</p>
+
+<p>$\psi = \frac{E}{1+k}[\lambda (e^{(k)}-1)] + \psi_0$ 	mit 	$\psi_0 = \frac{1}{1+k}$.</p>
+
+<p>Als Fleißaufgabe kann man jetzt wieder die fiktive (k)-Spannung berechnen. Hierzu muss man in der Verzerrungsenergiefunktion die Streckung durch die Verzerrung ausdrücken und einmal nach der Verzerrung ableiten.</p>
+
+<p>$\lambda = (1+k~e^{(k)})^{1/k}$</p>
+
+<p>$s^{(k)} = \frac{d\psi}{de^{(k)}} = \frac{E}{1+k}\left[\frac{\lambda}{\lambda^k} (e^{(k)}-1)+\lambda\right]$</p>
 
   </div><a class="u-url" href="/blog/markdown/2020/09/21/StabNichtlinearA.html" hidden></a>
 </article>

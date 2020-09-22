@@ -3,6 +3,7 @@ toc: true
 layout: post
 description: geometrisch exakte 1d finite elemente methode teil i
 categories: [markdown]
+comments: true
 title: Geometrisch exakte eindimensionale (1d) Finite-Elemente-Methode Teil I - Kinematik, Kinetik und Konstitution
 ---
 
@@ -167,11 +168,3 @@ Als Fleißaufgabe kann man jetzt wieder die fiktive (k)-Spannung berechnen. Hier
 $\lambda = (1+k~e^{(k)})^{1/k}$
 
 $s^{(k)} = \frac{d\psi}{de^{(k)}} = \frac{E}{1+k}\left[\frac{\lambda}{\lambda^k} (e^{(k)}-1)+\lambda\right]$
-
-<script src="https://utteranc.es/client.js"
-        repo="adtzlr/blog"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>

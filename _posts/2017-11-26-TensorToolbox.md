@@ -3,6 +3,7 @@ toc: true
 layout: post
 description: tensor toolbox for fortran
 categories: [markdown]
+comments: true
 title: Initial Release of Tensor Toolbox for Fortran
 ---
 

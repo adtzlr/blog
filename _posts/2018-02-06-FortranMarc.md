@@ -3,6 +3,7 @@ toc: false
 layout: post
 description: install a fortran compiler for msc.marc
 categories: [markdown]
+comments: true
 title: How to install a Fortran Compiler for MSC.Marc
 ---
 

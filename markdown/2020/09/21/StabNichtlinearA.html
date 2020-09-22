@@ -110,27 +110,25 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul class="section-nav">
-<li class="toc-entry toc-h1"><a href="#einleitung">Einleitung</a>
-<ul>
-<li class="toc-entry toc-h2"><a href="#kinematik-eines-stabelements">Kinematik eines Stabelements</a></li>
-<li class="toc-entry toc-h2"><a href="#verzerrung">Verzerrung</a></li>
-<li class="toc-entry toc-h2"><a href="#kinetik-kräftegleichgewicht-am-deformierten-system">Kinetik (Kräftegleichgewicht am deformierten System)</a></li>
-<li class="toc-entry toc-h2"><a href="#konstitution">Konstitution</a>
+<li class="toc-entry toc-h1"><a href="#einleitung">Einleitung</a></li>
+<li class="toc-entry toc-h1"><a href="#kinematik-eines-stabelements">Kinematik eines Stabelements</a></li>
+<li class="toc-entry toc-h1"><a href="#verzerrung">Verzerrung</a></li>
+<li class="toc-entry toc-h1"><a href="#kinetik-kräftegleichgewicht-am-deformierten-system">Kinetik (Kräftegleichgewicht am deformierten System)</a></li>
+<li class="toc-entry toc-h1"><a href="#konstitution">Konstitution</a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#hyperelastizität">Hyperelastizität</a></li>
-<li class="toc-entry toc-h3"><a href="#lineare-spannungs-verzerrungs-relation">Lineare Spannungs-Verzerrungs-Relation</a></li>
-<li class="toc-entry toc-h3"><a href="#wie-kommt-man-denn-jetzt-zur-stab-normalkraft">Wie kommt man denn jetzt zur Stab-Normalkraft?</a></li>
+<li class="toc-entry toc-h2"><a href="#verzerrungsenergiefunktion-je-einheit-unverformtes-volumen">Verzerrungsenergiefunktion je Einheit unverformtes Volumen</a></li>
+<li class="toc-entry toc-h2"><a href="#lineare-spannungs-verzerrungs-relation">Lineare Spannungs-Verzerrungs-Relation</a></li>
 </ul>
 </li>
-</ul>
-</li>
+<li class="toc-entry toc-h1"><a href="#wie-kommt-man-mit-all-dem-wissen-schlussendlich-zur-stab-normalkraft">Wie kommt man mit all dem Wissen schlussendlich zur Stab-Normalkraft?</a></li>
 </ul><h1 id="einleitung">
 <a class="anchor" href="#einleitung" aria-hidden="true"><span class="octicon octicon-link"></span></a>Einleitung</h1>
 
 <p>In dieser Beitragsserie werden wir die Grundlagen der geometrisch exakten eindimensionalen Finite-Elemente-Methode mit beliebiger Materialnichtlinearität zur Berechnung statischer, strukturmechanischer Aufgabenstellungen erarbeiten. Manche Dinge sind nicht direkt auf ein Stabelement im dreidimensionalen Raum übertragbar, darauf wird im Beitrag an den nötigen Stellen immer wieder eingegangen. Und die Beitragsreihe soll vor allem eines zeigen: Erklärt man die Dinge der Reihe nach, dann ist die Thematik ohne großes Vorwissen für Interessierte recht einfach verständlich.</p>
 
-<h2 id="kinematik-eines-stabelements">
-<a class="anchor" href="#kinematik-eines-stabelements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Kinematik eines Stabelements</h2>
+<h1 id="kinematik-eines-stabelements">
+<a class="anchor" href="#kinematik-eines-stabelements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Kinematik eines Stabelements</h1>
 
 <p>In der undeformierten Konfiguration eines Festkörpers - also eines Stabes - wird das differentielle Stabelement an der Position $X$ und mit der Länge $dX$ identifiziert.</p>
 
@@ -158,8 +156,8 @@ window.onload = wrap_img;
 
 <p><strong>Hinweis</strong>: Die direkte Berechnung der Streckung entlang eines im Raum liegenden Stabes ist auf diese Art nicht möglich! Hier muss über das Skalarprodukt $dl^2 = d\boldsymbol{x}^T d\boldsymbol{x}$ die quadratische Streckung berechnet werden (Satz von Pythagoras). Danach wird durch Ziehen der Wurzel die Stabstreckung ermittelt. Die Wurzel darf man aber nur <em>entlang des Stabes</em> ziehen, wenn man das so sagen will. Die Skalarprodukte der Stabvektoren sind die einzige Möglichkeit, um im Raum überhaupt eine Längenmessung etablieren zu können. Dafür ist auch kein Wurzelziehen nötig.</p>
 
-<h2 id="verzerrung">
-<a class="anchor" href="#verzerrung" aria-hidden="true"><span class="octicon octicon-link"></span></a>Verzerrung</h2>
+<h1 id="verzerrung">
+<a class="anchor" href="#verzerrung" aria-hidden="true"><span class="octicon octicon-link"></span></a>Verzerrung</h1>
 
 <p>Die Verzerrung ist eine (nichtlineare) Funktion der Deformation, die im eindimensionalen Sinne monoton steigend im Sinne der Streckung sein soll. Für den Grenzfall unendlich großer und kleiner Streckungen soll sie idealerweise gegen $\pm \infty$ gehen.</p>
 
@@ -181,8 +179,8 @@ window.onload = wrap_img;
 
 <p><strong>Hinweis</strong>: Auch hier gilt wieder: Die Streckung muss für Stäbe im dreidimensionalen Raum zunächst aus der Wurzel des Streckungsquadrats berechnet werden. Erst dann darf in Stabrichtung die (k)-Modifikation erfolgen. Einzig für den Sonderfall $k=2$ ist kein Wurzelziehen nötig, da die quadratische Länge des differentiellen Stabelements direkt aus dem Inprodukt der Stabvektoren resultiert.</p>
 
-<h2 id="kinetik-kräftegleichgewicht-am-deformierten-system">
-<a class="anchor" href="#kinetik-kr%C3%A4ftegleichgewicht-am-deformierten-system" aria-hidden="true"><span class="octicon octicon-link"></span></a>Kinetik (Kräftegleichgewicht am deformierten System)</h2>
+<h1 id="kinetik-kräftegleichgewicht-am-deformierten-system">
+<a class="anchor" href="#kinetik-kr%C3%A4ftegleichgewicht-am-deformierten-system" aria-hidden="true"><span class="octicon octicon-link"></span></a>Kinetik (Kräftegleichgewicht am deformierten System)</h1>
 
 <p>Wir betrachten ein differentielles Stabelement eines eindimensionalen Festkörpers (eines Stabs) in seiner deformierten Konfiguration und schneiden dieses frei. Im allgemeinen Belastungsfall treten am negativen und positiven Schnittufer voneinander verschiedene Normalkräfte auf. Die Normalkraft am negativen Schnittufer stellt den konstanten Grundanteil der Normalkraft dar und das positive Schnittufer beinhaltet zusätzlich differentielle Normalkraftänderungen entlang der deformierten Längskoordinate. Desweiteren wird eine Volumslast entlang der Längskoordinate mit vorerst beliebiger Abhängigkeit zur Längskoordinate angenommen. Das Kräftegleichgewicht am freigeschnittenen differentiellen Linienlement lautet:</p>
 
@@ -194,8 +192,8 @@ window.onload = wrap_img;
 
 <p><strong>Hinweis:</strong> Das differentielle Kräftegleichgewicht wird im Mehrdimensionalen zur Vektorgleichung $\boldsymbol{div}(\boldsymbol{\sigma})+\boldsymbol{b} = \boldsymbol{0}$.</p>
 
-<h2 id="konstitution">
-<a class="anchor" href="#konstitution" aria-hidden="true"><span class="octicon octicon-link"></span></a>Konstitution</h2>
+<h1 id="konstitution">
+<a class="anchor" href="#konstitution" aria-hidden="true"><span class="octicon octicon-link"></span></a>Konstitution</h1>
 
 <p>Im letzten Schritt müssen wir noch eine Verbindung zwischen der Verzerrung und dem Kräftegleichgewicht herstellen, indem wir das Materialverhalten miteinbeziehen: Wir verheiraten die Verzerrung mit der Normalkraft über das konstitutive Materialgesetz, dem Ehevertrag wenn man so will. Wir fordern außerdem, dass dieses Materialgesetz im Sinne eines Potentials als Verzerrungsenergiefunktion vorliegen soll, was uns zum Begriff der Hyperelastizität führt.</p>
 
@@ -209,6 +207,9 @@ window.onload = wrap_img;
 <p>Wie bereits erwähnt: Die Masse eines differentiellen Stabelements ist in einem geschlossenen System über den gesamten Deformationsvorgang hinweg konstant.</p>
 
 <p>$dm = \rho~a~dx = \rho_0~A~dX$</p>
+
+<h2 id="verzerrungsenergiefunktion-je-einheit-unverformtes-volumen">
+<a class="anchor" href="#verzerrungsenergiefunktion-je-einheit-unverformtes-volumen" aria-hidden="true"><span class="octicon octicon-link"></span></a>Verzerrungsenergiefunktion je Einheit unverformtes Volumen</h2>
 
 <p>Multipliziert man die Dichte der unverformten Konfiguration mit der Verzerrungsenergiefunktion je Einheit Masse, so führt das auf die Verzerrungsenergiefunktion je Einheit unverformtes Volumen. Für ein differentielles Stabelement ist das differentielle Volumen durch das Produkt aus unverformter Querschnittsfläche und differentieller Länge gegeben.</p>
 
@@ -224,8 +225,8 @@ window.onload = wrap_img;
 
 <p>$s^{(k)}=\frac{d\psi(e^{(k)})}{de^{(k)}}$</p>
 
-<h3 id="lineare-spannungs-verzerrungs-relation">
-<a class="anchor" href="#lineare-spannungs-verzerrungs-relation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lineare Spannungs-Verzerrungs-Relation</h3>
+<h2 id="lineare-spannungs-verzerrungs-relation">
+<a class="anchor" href="#lineare-spannungs-verzerrungs-relation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lineare Spannungs-Verzerrungs-Relation</h2>
 
 <p>Um eine lineare Spannungs-Verzerrungs-Verkoppelung zu erhalten, muss die Verzerrungsenergiefunktion eine quadratische Funktion der Verzerrung sein. Der E-Modul dient hierbei als Materialparameter.</p>
 
@@ -233,8 +234,8 @@ window.onload = wrap_img;
 
 <p>$s^{(k)}=E~e^{(k)}$</p>
 
-<h3 id="wie-kommt-man-denn-jetzt-zur-stab-normalkraft">
-<a class="anchor" href="#wie-kommt-man-denn-jetzt-zur-stab-normalkraft" aria-hidden="true"><span class="octicon octicon-link"></span></a>Wie kommt man denn jetzt zur Stab-Normalkraft?</h3>
+<h1 id="wie-kommt-man-mit-all-dem-wissen-schlussendlich-zur-stab-normalkraft">
+<a class="anchor" href="#wie-kommt-man-mit-all-dem-wissen-schlussendlich-zur-stab-normalkraft" aria-hidden="true"><span class="octicon octicon-link"></span></a>Wie kommt man mit all dem Wissen schlussendlich zur Stab-Normalkraft?</h1>
 
 <p>Soweit, so gut. Wir haben eine fiktive (k)-Spannung berechnet. Wie schaffen wir es jetzt, einen Zusammenhang zur Normalkraft herzustellen? Alles der Reihe nach. Die Normalkraft ist für ein differentielles Stabelement als Produkt aus Cauchy-Spannung und deformierter Querschnittsfläche gegeben (auch bekannt als Cauchysches Fundamentaltheorem).</p>
 

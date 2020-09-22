@@ -3,7 +3,7 @@ toc: true
 layout: post
 description: geometrisch exakte 1d finite elemente methode teil i
 categories: [markdown]
-title: Geometrisch exakte eindimensionale (1d) Finite-Elemente-Methode: Teil I - Kinematik, Kinetik und Konstitution
+title: Geometrisch exakte eindimensionale (1d) Finite-Elemente-Methode. Teil I - Kinematik, Kinetik und Konstitution
 ---
 
 # Einleitung

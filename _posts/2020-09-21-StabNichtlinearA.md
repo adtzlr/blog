@@ -80,7 +80,11 @@ Im letzten Schritt müssen wir noch eine Verbindung zwischen der Verzerrung und 
 
 ### Hyperelastizität
 
-Hyperelastizität bedeutet, dass eine Verzerrungsenergiefunktion je Einheit Masse existiert. Diese Verzerrungsenergiefunktion charakterisiert das Materialverhalten im Sinne der Deformation. Warum bezieht man sie je Einheit Masse? Weil die Masse die einzige Konstante eines Festkörpers während der Deformation darstellt. Das differentielle Potential der inneren Kräfte ist folglich das Produkt aus Verzerrungsenergiefunktion je Einheit Masse und differentieller Masse. Um die Potentialbeiträge der externen Kräfte kümmern wir uns derzeit nicht.
+Hyperelastizität bedeutet, dass eine Verzerrungsenergiefunktion je Einheit Masse existiert. Diese Verzerrungsenergiefunktion charakterisiert das Materialverhalten im Sinne der Deformation. Warum bezieht man sie je Einheit Masse? Weil die Masse die einzige Konstante eines Festkörpers während der Deformation darstellt. 
+
+Masse? Wir sind eindimensional unterwegs, wie soll das klappen? Da ein eindimensionaler Stab nur durch eine Querschnittsfläche und einer Dichte eine Masse bekommt, muss die eindimensionale Betrachtungsweise an dieser Stelle zwangsläufig um eine Querschnittsfläche erweitert werden!
+
+Das differentielle Potential der inneren Kräfte ist folglich das Produkt aus Verzerrungsenergiefunktion je Einheit Masse und differentieller Masse. Um die Potentialbeiträge der externen Kräfte kümmern wir uns derzeit nicht.
 
 $d\Pi_{int} = \psi_m(e^{(k)})~dm$
 
@@ -126,7 +130,7 @@ $\delta dW_{int} = - \sigma~\delta\lambda \lambda^{-1}~a~dx$
 
 Durch einen Vergleich
 
-$s^{(k)}\lambda^k \delta\lambda\lambda^{-1} A dX = \sigma~\delta\lambda \lambda^{-1}~a~dx$
+$s^{(k)}\lambda^k \delta\lambda\lambda^{-1}~A~dX = \sigma~\delta\lambda \lambda^{-1}~a~dx$
 
 erhält man die Cauchy-Spannung in Abhängigkeit der Verzerrungsenergiefunktion
 

@@ -8,7 +8,7 @@ title: Geometrisch exakte eindimensionale (1d) Finite-Elemente-Methode
 
 # Einleitung
 
-In dieser Beitragsserie werden wir die Grundlagen der geometrisch exakten eindimensionalen Finite-Elemente-Methode mit beliebiger Materialnichtlinearität zur Berechnung statischer, strukturmechanischer Aufgabenstellungen erarbeiten. Manche Dinge sind nicht direkt auf ein Stabelement im dreidimensionalen Raum übertragbar, darauf wird im Beitrag an den nötigen Stellen immer wieder eingegangen. Und die Beitragsreihe soll vor allem eines zeigen: Erklärt man die Dinge der Reihe nach, dann ist die Thematik ohne großes Vorwissen für Interessierte recht einfach verständlich.
+In dieser Beitragsserie werden wir die Grundlagen der geometrisch exakten eindimensionalen Finite-Elemente-Methode mit beliebiger elastischer Materialnichtlinearität zur Berechnung statischer, strukturmechanischer Aufgabenstellungen erarbeiten. Im Zuge dessen werden wir versuchen, eine lineare Verkoppelung der Normalkraft mit einem generalisierten Verzerrungsmaß für ein hyperelastisches Material einzubauen. Das ist dann doch nicht ganz so trivial, wie man zunächst meinen möchte. Manche Dinge sind außerdem nicht direkt vom eindimensionalen Stab auf ein Stabelement im dreidimensionalen Raum übertragbar, darauf wird im Beitrag an den nötigen Stellen immer wieder eingegangen. Und die Beitragsreihe soll vor allem eines zeigen: Erklärt man die Dinge der Reihe nach, dann ist die Thematik ohne großes Vorwissen für Interessierte recht einfach verständlich.
 
 # Kinematik eines Stabelements
 

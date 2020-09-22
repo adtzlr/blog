@@ -46,11 +46,11 @@ Die Verzerrung ist eine (nichtlineare) Funktion der Deformation, die im eindimen
 
 Um den undeformierten Zustand soll zudem die Steigung eins gelten, um im Falle infinitesimaler Streckungen die Ingenieurverzerrungen zu erhalten. 
 
-Seth und Hill haben für eine generalisierte Veerzerrung folgenden Vorschlag für die Verzerrungen gemacht:
+Seth und Hill haben für eine generalisierte Verzerrung folgenden Vorschlag gemacht:
 
 $e^{(k)} = \frac{1}{k} (\lambda^k-1)$
 
-Für den Sonderfall $k=0$ führt dies auf die log. Verzerrungen.
+Wenn wir im weiteren Verlauf den Begriff Verzerrung verwenden, meinen wir immer diese generalisierten Verzerrungen. Erwähnenswert ist noch, dass für den Sonderfall $k=0$ die Seth-Hill-Verzerrungen auf die log. Verzerrung führt:
 
 $e^{(0)} = ln(\lambda)$
 
@@ -130,9 +130,11 @@ $s^{(k)}\lambda^k \delta\lambda\lambda^{-1} A dX = \sigma~\delta\lambda \lambda^
 
 erhält man die Cauchy-Spannung in Abhängigkeit der Verzerrungsenergiefunktion
 
-$\sigma = \frac{1}{J} s^{(k)}\lambda^k$
+$\sigma = \frac{1}{J} s^{(k)}\lambda^k$.
 
-und weiters die Normalkraft als Funktion der Verzerrung (und in weiterer Folge der Streckung)
+## Normalkraft als Funktion der Verzerrung
+
+...und in weiterer Folge der Streckung:
 
 $N = s^{(k)}\lambda^{k-1} A$
 
@@ -140,4 +142,24 @@ $N = EA~e^{(k)}\lambda^{k-1}$
 
 Man sieht also, dass die Normalkraft trotz aller Bemühungen **nicht**-linear mit der Verzerrung interagiert! Die Umrechnung des Verzerrungsinkrements auf das Inkrement der Streckung macht uns hier einen Strich durch die Rechnung. Das ist im Grunde aber nicht weiter schlimm, es ist eben so.
 
-Da wir jetzt hinsichtlich der Kinematik, der Kinetik und der Konstitution alle Vorbereitungen getroffen haben, geht es im nächsten Beitrag weiter mit der Diskretisierung.
+Da wir jetzt hinsichtlich der Kinematik, der Kinetik und der Konstitution alle Vorbereitungen getroffen haben, geht es im nächsten Beitrag weiter mit der Diskretisierung. Aber zuvor noch ein letztes Gedankenspiel: Wie müsste eine Verzerrungsenergiefunktion aussehen, die eine lineare Verkoppelung der Normalkraft mit der Verzerrung ermöglicht?
+
+## Normalkraft als lineare Funktion der Verzerrung
+
+Bei dieser Fragestellung gehen wir nicht vom Formelbau einer gegebenen Verzerrungsenergiefunktion aus, sondern von der gewünschten Formelarchitektur der Normalkraft:
+
+$N = \frac{d\psi}{d\lambda} A = EA~e^{(k)}$.
+
+Damit können wir die Verzerrungsfunktion durch einmaliges Integrieren nach der Streckung erzeugen. Die Integrationskonstante bestimmen wir im Anschluss mit der Forderung, dass im undeformierten Zustand keine Verzerrungsenergie auftreten soll.
+
+$\psi = \int \frac{d\psi}{d\lambda} d\lambda = \int \frac{E}{k}(\lambda^k-1)~d\lambda$
+
+Versucht man obige Gleichung zu integrieren, so erhält man eine Verzerrungsenergiefunktion, die nicht für alle beliebigen (k)-Exponenten konvex ist. Eine strikt konvexe Verzerrungsenergiefunktion erhalten wir nur dann, wenn wir zunächst den Sonderfall der log. Verzerrungen (k=0) annehmen, dann integrieren und erst zum Schluss die log. Verzerrung durch die allgemeine (k)-Verzerrung ersetzen. Schlussendlich muss man noch einen auftretenden Vorfaktor eliminieren und wir erhalten die Verzerrungsenergiefunktion, die eine lineare Verkoppelung der Normalkraft mit der Verzerrung erzeugt:
+
+$\psi = \frac{E}{1+k}[\lambda (e^{(k)}-1)] + \psi_0$ 	mit 	$\psi_0 = \frac{1}{1+k}$.
+
+Als Fleißaufgabe kann man jetzt wieder die fiktive (k)-Spannung berechnen. Hierzu muss man in der Verzerrungsenergiefunktion die Streckung durch die Verzerrung ausdrücken und einmal nach der Verzerrung ableiten.
+
+$\lambda = (1+k~e^{(k)})^{1/k}$
+
+$s^{(k)} = \frac{d\psi}{de^{(k)}} = \frac{E}{1+k}\left[\frac{\lambda}{\lambda^k} (e^{(k)}-1)+\lambda\right]$

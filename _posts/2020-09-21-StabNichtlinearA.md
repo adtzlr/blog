@@ -168,3 +168,9 @@ Als Fleißaufgabe kann man jetzt wieder die fiktive (k)-Spannung berechnen. Hier
 $\lambda = (1+k~e^{(k)})^{1/k}$
 
 $s^{(k)} = \frac{d\psi}{de^{(k)}} = \frac{E}{1+k}\left[\frac{\lambda}{\lambda^k} (e^{(k)}-1)+\lambda\right]$
+
+## Beispiel k=0
+Nachfolgend sind die Verzerrungsenergiefunktion, (k)-Spannung und Normalkraft für k=0 in Abhängigkeit der Streckung dargestellt.
+
+
+![]({{ site.baseurl }}/images/Psi_Sk_N_linear_1D.png "Verläufe für k=0")

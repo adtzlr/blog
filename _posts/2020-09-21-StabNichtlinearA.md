@@ -173,4 +173,4 @@ $s^{(k)} = \frac{d\psi}{de^{(k)}} = \frac{E}{1+k}\left[\frac{\lambda}{\lambda^k}
 Nachfolgend sind die Verzerrungsenergiefunktion, (k)-Spannung und Normalkraft für k=0 in Abhängigkeit der Streckung dargestellt.
 
 
-![]({{ site.baseurl }}/images/PsiSkNlinear1D.png "Verläufe für k=0")
+![]({{ site.baseurl }}/images/NormalkraftStabk0.png "Verläufe für k=0")

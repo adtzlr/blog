@@ -65,6 +65,8 @@ $\delta e^{(k)} = \frac{\lambda^k}{\lambda}~\delta \lambda$ .
 
 # Kinetik (Kräftegleichgewicht am deformierten System)
 
+![]({{ site.baseurl }}/images/GleichgewichtStab.png "Gleichgewicht am deformierten differentiellen Stabelement")
+
 Wir betrachten ein differentielles Stabelement eines eindimensionalen Festkörpers (eines Stabs) in seiner deformierten Konfiguration und schneiden dieses frei. Im allgemeinen Belastungsfall treten am negativen und positiven Schnittufer voneinander verschiedene Normalkräfte auf. Die Normalkraft am negativen Schnittufer stellt den konstanten Grundanteil der Normalkraft dar und das positive Schnittufer beinhaltet zusätzlich differentielle Normalkraftänderungen entlang der deformierten Längskoordinate. Desweiteren wird eine Volumslast entlang der Längskoordinate mit vorerst beliebiger Abhängigkeit zur Längskoordinate angenommen. Das Kräftegleichgewicht am freigeschnittenen differentiellen Linienlement lautet:
 
 $\sum N = 0 = -\sigma(x)~a(x) + \sigma(x)~a(x) + \frac{d\sigma(x)}{dx}~a(x) + b(x)~a(x)$

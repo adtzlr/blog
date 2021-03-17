@@ -10,9 +10,6 @@ jobs:
       (github.event.issue.title == '[fastpages] Automated Upgrade')   
     runs-on: ubuntu-latest
     steps:
-    - name: ACTIONS_ALLOW_UNSECURE_COMMANDS
-      id: ACTIONS_ALLOW_UNSECURE_COMMANDS
-      run: echo 'ACTIONS_ALLOW_UNSECURE_COMMANDS=true' >> $GITHUB_ENV
 
     - name: see payload
       run: |
@@ -58,9 +55,6 @@ jobs:
       (github.event.issue.author_association == 'OWNER' || github.event.issue.author_association == 'COLLABORATOR' || github.event.issue.author_association == 'MEMBER')
     runs-on: ubuntu-latest
     steps:
-    - name: ACTIONS_ALLOW_UNSECURE_COMMANDS
-      id: ACTIONS_ALLOW_UNSECURE_COMMANDS
-      run: echo 'ACTIONS_ALLOW_UNSECURE_COMMANDS=true' >> $GITHUB_ENV
     
     - name: Set up Python
       uses: actions/setup-python@v1
@@ -176,7 +170,7 @@ jobs:
         upgrade_pr_path.write_text(upgrade_pr)
       shell: python
 
-    - uses: webfactory/ssh-agent@v0.2.0
+    - uses: webfactory/ssh-agent@v0.4.1
       if: steps.check_version.outputs.vbump == 'true'
       with:
           ssh-private-key: ${{ secrets.SSH_DEPLOY_KEY }}

@@ -10,6 +10,9 @@ jobs:
       (github.event.issue.title == '[fastpages] Automated Upgrade')   
     runs-on: ubuntu-latest
     steps:
+    - name: ACTIONS_ALLOW_UNSECURE_COMMANDS
+      id: ACTIONS_ALLOW_UNSECURE_COMMANDS
+      run: echo 'ACTIONS_ALLOW_UNSECURE_COMMANDS=true' >> $GITHUB_ENV
 
     - name: see payload
       run: |
